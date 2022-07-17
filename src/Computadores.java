@@ -1,13 +1,13 @@
 public class Computadores {
     // Variables base
-    private final static char CONSUMO_W = 'F';
-    private final static Double PRECIO_BASE = 100.0;
-    private final static Integer PESO_BASE = 5;
+    protected final static char CONSUMO_W = 'F';
+    protected final static Double PRECIO_BASE = 100.0;
+    protected final static Integer PESO_BASE = 5;
 
     // Variables
-    private Integer peso;
-    private char consumoW;
-    private Double precioBase;
+    protected Integer peso;
+    protected char consumoW;
+    protected Double precioBase;
 
     // Constructores public Computadores(){
     // Constructor
@@ -60,7 +60,7 @@ public class Computadores {
         if (peso >= 0 && peso < 19) {
             adicion += 10.0;
         } else if (peso >= 20 && peso < 49) {
-            adicion += 20.0;
+            adicion += 50.0;
         } else if (peso >= 50 && peso <= 79) {
             adicion += 80.0;
         } else if (peso >= 80) {
