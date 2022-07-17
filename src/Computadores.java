@@ -17,58 +17,72 @@ public class Computadores {
         this.precioBase = PRECIO_BASE;
     }
 
-    //* Constructor con 2 parametros
+    // * Constructor con 2 parametros
     public Computadores(Double precioBase, Integer peso) {
         this.peso = peso;
         this.consumoW = CONSUMO_W;
         this.precioBase = precioBase;
     }
-    //* Constructor con 3 parametros
+
+    // * Constructor con 3 parametros
     public Computadores(Double precioBase, Integer peso, char consumoW) {
         this.peso = peso;
         this.consumoW = consumoW;
         this.precioBase = precioBase;
     }
 
-
     // Metodos
     public Double calcularPrecio() {
-    Double adicion = 0.0;
-    // Código para consumo
-    switch (consumoW) {
-        case 'A':
-            adicion += 100.0;
-            break;
-        case 'B':
-            adicion += 80.0;
-            break;
-        case 'C':
-            adicion += 60.0;
-            break;
-        case 'D':
-            adicion += 50.0;
-            break;
-        case 'E':
-            adicion += 30.0;
-            break;
-        case 'F':
+        Double adicion = 0.0;
+        // Código para consumo
+        switch (consumoW) {
+            case 'A':
+                adicion += 100.0;
+                break;
+            case 'B':
+                adicion += 80.0;
+                break;
+            case 'C':
+                adicion += 60.0;
+                break;
+            case 'D':
+                adicion += 50.0;
+                break;
+            case 'E':
+                adicion += 30.0;
+                break;
+            case 'F':
+                adicion += 10.0;
+                break;
+
+        }
+        // codigo para peso
+        if (peso >= 0 && peso < 19) {
             adicion += 10.0;
-            break;
-        default:
-            break;
-        
+        } else if (peso >= 20 && peso < 49) {
+            adicion += 20.0;
+        } else if (peso >= 50 && peso <= 79) {
+            adicion += 80.0;
+        } else if (peso >= 80) {
+            adicion += 100.0;
+        }
+
+        return precioBase + adicion;
+
+        // Getter
+
     }
-    // codigo para peso
-    if (peso >= 0 && peso < 19) {
-        adicion += 10.0;
-    } else if (peso >= 20 && peso < 49) {
-        adicion += 20.0;
+
+    public Integer getPeso() {
+        return peso;
     }
 
-
+    public char getConsumoW() {
+        return consumoW;
     }
-    // Getter
 
-
+    public Double getPrecioBase() {
+        return precioBase;
+    }
 
 }
